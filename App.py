@@ -1,6 +1,7 @@
 import argparse
 from pydub import AudioSegment
 import random
+import os
 
 def get_file():
     arg_parser = argparse.ArgumentParser()
@@ -17,7 +18,7 @@ def will_not_overflow_track_end(track_length, current_new_track_length, silence_
     next_track_pointer_seconds = current_new_track_length + silence_duration_millis / 1000 + sound_duration_millis / 1000
     return track_length > next_track_pointer_seconds
 
-def with_silence(track):
+def with_silences(track):
     start_duration = 4 * 1000
     new_track = track[:start_duration]
 
@@ -43,6 +44,8 @@ def with_silence(track):
 if __name__ == "__main__":
     file = get_file()
     track = AudioSegment.from_wav(file)
-    new_track = with_silence(track)
-    new_track.export("silenced.wav", format="wav")
-    print("Generated silences in: ", file)
+    new_track = with_silences(track)
+    old_filename = os.path.basename(os.path.normpath(file))
+    new_filename = f'silenced-{old_filename}.wav'
+    new_track.export(new_filename, format="wav")
+    print("Generated silences for: ", file)
