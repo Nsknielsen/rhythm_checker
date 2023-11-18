@@ -8,11 +8,14 @@ Use cases:
 ### Prerequisites
 Python 3 and `pip` or a similar package manager.
 
-## Usage
+### Usage
 1. Clone this repository.
 2. From the root folder, install dependencies eg. with `pip install -r requirements.txt`.
-3. Run the program with `python App.py [absolutePathToYourWavFile]`
+3. Run the program with `python App.py --file [absolutePathToYourWavFile]`
 4. The output file is found in the root folder as `silenced-[inputFileName].wav`
+
+### Arguments
+`-f | --file`: The .wav file that you want to add silences to.
 
 ## License
 [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.txt)

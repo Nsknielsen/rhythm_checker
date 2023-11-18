@@ -5,7 +5,7 @@ import os
 
 def get_file():
     arg_parser = argparse.ArgumentParser()
-    arg_parser.add_argument('file')
+    arg_parser.add_argument('-f', '--file')
     args = arg_parser.parse_args()
     return args.file
 
