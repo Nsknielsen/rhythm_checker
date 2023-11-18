@@ -13,3 +13,6 @@ Python 3 and `pip` or a similar package manager.
 2. From the root folder, install dependencies eg. with `pip install -r requirements.txt`.
 3. Run the program with `python App.py [absolutePathToYourWavFile]`
 4. The output file is found in the root folder as `silenced-[inputFileName].wav`
+
+## License
+[GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.txt)
