@@ -55,6 +55,6 @@ if __name__ == "__main__":
     new_track = with_silences(track, silence_lower, silence_upper, sound_lower, sound_upper)
 
     old_filename = os.path.basename(os.path.normpath(file))
-    new_filename = f'silenced-{old_filename}.wav'
+    new_filename = f'silenced-{old_filename}'
     new_track.export(new_filename, format="wav")
     print("Generated silences for: ", file)
