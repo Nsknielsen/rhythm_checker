@@ -1,5 +1,6 @@
 import argparse
 from pydub import AudioSegment
+import random
 
 def get_file():
     arg_parser = argparse.ArgumentParser()
@@ -7,16 +8,21 @@ def get_file():
     args = arg_parser.parse_args()
     return args.file
 
+def get_durations(silence_lower=2, silence_upper=5, sound_lower=2, sound_upper=5):
+    silence_duration = random.randint(silence_lower, silence_upper) * 1000
+    sound_duration = random.randint(sound_lower, sound_upper) * 1000
+    return (silence_duration, sound_duration)
+
 def with_silence(track):
     start_duration = 4 * 1000
-    silence_duration = 2 * 1000
-    sound_duration = 3 * 1000
     start = track[:start_duration]
 
     new_track_segments = [start]
     track_pointer = start_duration
+
   
     for i in range(5):
+        silence_duration, sound_duration = get_durations()
         silence_segment = AudioSegment.silent(duration=silence_duration)
         new_track_segments.append(silence_segment)
         track_pointer += silence_duration
