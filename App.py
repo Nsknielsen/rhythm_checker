@@ -48,10 +48,10 @@ if __name__ == "__main__":
     args = get_args()
     file = args.file
     track = AudioSegment.from_wav(file)
-    silence_lower = args.silence_lower
-    silence_upper = args.silence_upper
-    sound_lower = args.sound_lower
-    sound_upper = args.sound_upper
+    silence_lower = int(args.silence_lower)
+    silence_upper = int(args.silence_upper)
+    sound_lower = int(args.sound_lower)
+    sound_upper = int(args.sound_upper)
     new_track = with_silences(track, silence_lower, silence_upper, sound_lower, sound_upper)
 
     old_filename = os.path.basename(os.path.normpath(file))
