@@ -18,10 +18,10 @@ To avoid silencing the beginning and end of the track, provide a .wav file with 
 
 ### Arguments
 - `-f | --file`: The .wav file that you want to add silences to.
-- `--silence_lower` (optional): Lower bound for the duration of each silence segment in milliseconds.
-- `--silence_upper` (optional): Upper bound for the duration of each silence segment in milliseconds.
-- `--sound_lower` (optional): Lower bound for the duration of each sound segment in milliseconds.
-- `--sound_upper` (optional): Upper bound for the duration of each sound segment in milliseconds.
+- `--silence_lower` (optional): Lower bound for the duration of each silence segment in milliseconds. Default value: 2000.
+- `--silence_upper` (optional): Upper bound for the duration of each silence segment in milliseconds. Default value: 5000.
+- `--sound_lower` (optional): Lower bound for the duration of each sound segment in milliseconds. Default value: 2000.
+- `--sound_upper` (optional): Upper bound for the duration of each sound segment in milliseconds. Default value: 5000.
 
 <b>Example usage:</b> `python App.py --file "C:\Users\nsknielsen\desktop\aalborg_polka.wav" --silence_lower 3000 --silence_upper 6000`
 
