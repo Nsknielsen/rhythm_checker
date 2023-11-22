@@ -14,6 +14,8 @@ Python 3 and `pip` or a similar package manager.
 3. Run the program with `python App.py --file [absolutePathToYourWavFile] [optionalArguments]`
 4. The output file is found in the root folder as `silenced-[inputFileName].wav`
 
+To avoid silencing the beginning and end of the track, provide a .wav file with no silence before and after the recording.
+
 ### Arguments
 - `-f | --file`: The .wav file that you want to add silences to.
 - `--silence_lower` (optional): Lower bound for the duration of each silence segment in milliseconds.
